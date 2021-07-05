@@ -1,0 +1,35 @@
+#bar-title{
+    display: flex;
+    justify-content: flex-end;
+    width: -moz-available;
+    background-color:rgb(196,183,215);
+    
+    height: 2rem;
+    box-shadow: 1px 7px 7px 0.25px;
+    border:steelblue 1px solid ;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    
+}
+
+#bar-title h3{
+    margin:0rem 0rem 0rem 1rem;
+}
+#bar-title div{
+    width: -moz-available;  
+}
+
+button{
+    background-color: transparent;
+    border: none;
+    border-radius: 0.25px ;
+}
+
+
+button:hover,
+button:active{
+    background-color: rgb(40, 182, 211);
+    border-color:rgb(40, 182, 211);
+    border: 1px ;
+   
+}

@@ -1,77 +1,26 @@
-#quote-box {
+#editor-full{
+  width: 35rem;
+  box-shadow: 1px 7px 7px 0.25px;
+  border-radius: 0.25px;
+}
+#preview-full{
+  margin-top: 3rem;
+  width: 50rem;
+  box-shadow: 1px 7px 7px 0.25px;
+  border-radius: 0.25px;
+}
+#mark-down-full{
   display: flex;
-  margin: auto auto auto auto;
-  text-align: center;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 450px;
-
 }
 
-#text
-  i {
-  margin-right: 0.4em;
- }
- #text{
-  text-align: center;
- 
-  clear: both;
-  font-weight: 500;
-  font-size: 1.75em;
-}
-#author{
-  display: flex;
-  justify-content: flex-end;
-}
-
-
-
-
-#new-quote,#tweet-quote{
-  
-  text-align: right;
-  cursor: pointer;
-  background-color: rgb(0,122,145);
-  color: white;
-  padding: 0rem 0.2rem;
-  border:1px solid rgb(0,122,145);
-  border-radius: 4px;
-  font-weight: bold;
-}
-#tweet-quote:hover,
-#new-quote:hover,
-#tweet-quote:active,
-#new-quote:active{
-  background-color: rgb(40, 182, 211);
-  border-color:rgb(40, 182, 211);
-
-}
-
-#action{
-  display: flex;
-
-}
-#action-right{
-  display: flex;
-  justify-content: flex-end;
-  margin-left: auto;
-}
-@media (max-width: 450px) {
-  #quote-box{
- 
-       width: 100%;
-   }
+@media (max-width:590px){
+  #editor-full{
+    width: 95%;
   }
-@media (max-width:245px){
-  #action{
-    flex-direction: column;
-  }
-  #new-quote{
-    margin-top: 1rem;
-  }
-
-
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
