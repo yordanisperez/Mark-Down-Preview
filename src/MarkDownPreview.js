@@ -64,30 +64,83 @@ And here. | Okay. | I think we get it.
 function MarkDownPreview() {
   const [markDownString,setMarkDownString]=useState(sampleMarkDownInit)
   const [htmlString,setHtmlString]=useState(marked(sampleMarkDownInit,{ breaks: true}))
-  const [icon, setIcon] =useState(1); //1 both windows //2 Display only the cliked //
+  const [iconDIsplay, setIconDisplay] =useState(1); //1 both windows //2 Only Editor //3 Only Preview
   const editorRef =useRef();
+  
+
 function onChangeHandle()
 {
   setMarkDownString(editorRef.current.value)
   setHtmlString(marked(editorRef.current.value, {breaks: true}));
 }
+
+function onClickEditorHandle()
+{
+  if (iconDIsplay===1)
+    setIconDisplay(2);
+  else
+    setIconDisplay(1);
+
+}
+
+function onClickPreviewHandle(){
+  if (iconDIsplay===1)
+    setIconDisplay(3);
+  else
+    setIconDisplay(1);
+
+}
  
-  return <div id="mark-down-full">
-            <div id="editor-full">
-              <TitleBar text={"Editor"} >
-                 
-              </TitleBar>
-               <Edition onChangeHandle={onChangeHandle} markDown={markDownString} editorRef={editorRef}>
-               </Edition>
-            </div>
-            <div id="preview-full">
-              <TitleBar text={"Preview"}>
-              </TitleBar>
-              <Preview _html={htmlString}>
-              </Preview>
-            </div>
-           
+ if (iconDIsplay===1){
+    return (
+      <div id="mark-down-full">
+        <div id="editor-full">
+          <TitleBar text={"Editor"} icon={"fa fa-arrows-alt"} onClickBarHandle={onClickEditorHandle}></TitleBar>
+          <Edition
+            onChangeHandle={onChangeHandle}
+            markDown={markDownString}
+            editorRef={editorRef}
+            rows={"12"}
+          ></Edition>
         </div>
+        <div id="preview-full">
+          <TitleBar text={"Preview"} icon={"fa fa-arrows-alt"} onClickBarHandle={onClickPreviewHandle}></TitleBar>
+          <Preview _html={htmlString}></Preview>
+        </div>
+      </div>
+    );
+ } 
+ if (iconDIsplay===2){
+  return (
+    <div id="mark-down-full">
+      <div id="editor-full">
+        <TitleBar 
+          text={"Editor"} 
+          icon={"fa fa-retweet"} 
+          onClickBarHandle={onClickEditorHandle}>
+        </TitleBar>
+        <Edition
+          onChangeHandle={onChangeHandle}
+          markDown={markDownString}
+          editorRef={editorRef}
+          rows={"24"}
+        ></Edition>
+      </div>
+
+    </div>
+  );
+} 
+if (iconDIsplay===3){
+  return (
+    <div id="mark-down-full">
+     <div id="preview-full">
+        <TitleBar text={"Preview"} icon={"fa fa-retweet"} onClickBarHandle={onClickPreviewHandle}></TitleBar>
+        <Preview _html={htmlString}></Preview>
+      </div>
+    </div>
+  );
+} 
+ 
 }
 
 export default MarkDownPreview;

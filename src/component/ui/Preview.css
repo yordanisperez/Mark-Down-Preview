@@ -6,9 +6,13 @@
     resize: vertical;
     margin: 0rem auto 0rem auto;
     font-size: 0.875rem;
-    background-color: rgb(245, 245, 245);
+    background-color: #c4caef ;
     width: -moz-available;
     border-radius: 0px 0.25px 0.25px 0px;
     min-height: 8rem;
-    max-height: 16rem;
+    position: relative;
+   
 }
+
+ 
+ 

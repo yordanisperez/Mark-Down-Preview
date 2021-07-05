@@ -25,11 +25,3 @@ button{
     border-radius: 0.25px ;
 }
 
-
-button:hover,
-button:active{
-    background-color: rgb(40, 182, 211);
-    border-color:rgb(40, 182, 211);
-    border: 1px ;
-   
-}
